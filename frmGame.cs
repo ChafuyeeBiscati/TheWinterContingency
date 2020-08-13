@@ -17,7 +17,9 @@ namespace TheWinterContingency
         Mercenary mercenary = new Mercenary();//create object called spaceship 
         //declare a list  missiles from the missile class
         List<Bullet> bullets = new List<Bullet>();
-        List<Alien> aliens = new List<Alien>();
+        Alien[] alien = new Alien[11];
+        int score, lives;
+
 
 
 
@@ -26,8 +28,9 @@ namespace TheWinterContingency
             InitializeComponent();
             for (int i = 0; i < 11; i++)
             {
-                int displacement = 10 + (i * 70);
-                aliens.Add(new Alien(displacement));
+                int x = 10 + (i * 75);
+                alien[i] = new Alien(x);
+
             }
 
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, pnlGame, new object[] { true });
@@ -35,6 +38,7 @@ namespace TheWinterContingency
 
         private void frmGame_Load(object sender, EventArgs e)
         {
+            tmrAlien.Enabled = true;
             Cursor.Hide();
         }
 
@@ -46,15 +50,18 @@ namespace TheWinterContingency
             {
                 m.draw(g);
             }
-            foreach (Alien p in aliens)
+            foreach (Alien p in alien)
             {
                 p.draw(g);//Draw the planet
-                p.moveAlien(g);//move the planet
+                p.MoveAlien(g);//move the planet
                                //if the planet reaches the bottom of the form relocate it back to the top
                 if (p.y >= ClientSize.Height)
                 {
                     p.y = -20;
+
                 }
+
+
 
             }
 
@@ -84,7 +91,7 @@ namespace TheWinterContingency
         private void tmrBullet_Tick(object sender, EventArgs e)
         {
           
-                foreach (Alien p in aliens)
+                foreach (Alien p in alien)
                 {
 
                     foreach (Bullet m in bullets)
@@ -92,16 +99,56 @@ namespace TheWinterContingency
                         if (p.alienRec.IntersectsWith(m.bulletRec))
                         {
                         p.y = -20;// relocate planet to the top of the form
+                        score += 1;//update the score
+                        lblScore.Text = score.ToString();// display score
 
                         bullets.Remove(m);
                             break;
                         }
+
                     }
 
                 }
-            
+                 
+
             pnlGame.Invalidate();
 
         }
+
+        private void tmrAlien_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                if (mercenary.mercRec.IntersectsWith(alien[i].alienRec))
+                {
+                    //reset planet[i] back to top of panel
+                    alien[i].y = 30; // set  y value of planetRec
+                    lives -= 1;// lose a life
+                    lblLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+                //if a planet reaches the bottom of the Game Area reposition it at the top
+                if (alien[i].y >= pnlGame.Height)
+                {
+                    alien[i].y = 30;
+                }
+
+            }
+            pnlGame.Invalidate();//makes the paint event fire to redraw the panel
+        }
+
+        private void CheckLives()
+        {
+            if (lives == 0)
+            {
+                
+                MessageBox.Show("Game Over");
+
+            }
+        }
+
+
+
+
+        }
     }
-}

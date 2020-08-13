@@ -13,7 +13,6 @@ namespace TheWinterContingency
 
         public int x, y, width, height;//variables for the rectangle
         public Image alienImage;//variable for the planet's image
-
         public Rectangle alienRec;//variable for a rectangle to place our image in
 
         //Create a constructor (initialises the values of the fields)
@@ -34,10 +33,10 @@ namespace TheWinterContingency
 
             g.DrawImage(alienImage, alienRec);
         }
-        public void moveAlien (Graphics g)
+        public void MoveAlien (Graphics g)
         {
-            y += 5;
             alienRec.Location = new Point(x, y);
+
 
         }
 

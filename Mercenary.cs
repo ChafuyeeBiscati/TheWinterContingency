@@ -18,7 +18,7 @@ namespace TheWinterContingency
         public Mercenary()
         {
             x = 250;
-            y = 480;
+            y = 440;
             width = 40;
             height = 40;
             mercenary = Properties.Resources.Soldier_1;
