@@ -18,7 +18,8 @@ namespace TheWinterContingency
         //declare a list  missiles from the missile class
         List<Bullet> bullets = new List<Bullet>();
         Alien[] alien = new Alien[11];
-        int score, lives;
+        int score;
+        int time = 120;
 
 
 
@@ -38,6 +39,7 @@ namespace TheWinterContingency
 
         private void frmGame_Load(object sender, EventArgs e)
         {
+            tmrTime.Enabled = true;
             tmrAlien.Enabled = true;
             Cursor.Hide();
         }
@@ -123,9 +125,9 @@ namespace TheWinterContingency
                 {
                     //reset planet[i] back to top of panel
                     alien[i].y = 30; // set  y value of planetRec
-                    lives -= 1;// lose a life
-                    lblLives.Text = lives.ToString();// display number of lives
-                    CheckLives();
+                    score -= 1;// lose a life
+                    lblScore.Text = score.ToString();// display number of lives
+                    CheckScore();
                 }
                 //if a planet reaches the bottom of the Game Area reposition it at the top
                 if (alien[i].y >= pnlGame.Height)
@@ -137,12 +139,33 @@ namespace TheWinterContingency
             pnlGame.Invalidate();//makes the paint event fire to redraw the panel
         }
 
-        private void CheckLives()
+        private void tmrTime_Tick(object sender, EventArgs e)
         {
-            if (lives == 0)
+            time -= 1;//update the score
+            lblTime.Text = time.ToString();// display score
+            CheckScore();
+        }
+
+        private void CheckScore()
+        {
+            if (score == -1)
             {
-                
+                tmrAlien.Enabled = false;
+                tmrBullet.Enabled = false;
                 MessageBox.Show("Game Over");
+
+                Hide();
+                Cursor.Show();
+
+            }
+            if (time == 0)
+            {
+                tmrAlien.Enabled = false;
+                tmrBullet.Enabled = false;
+                MessageBox.Show("Game Over");
+
+                Hide();
+                Cursor.Show();
 
             }
         }

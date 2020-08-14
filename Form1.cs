@@ -29,5 +29,10 @@ namespace TheWinterContingency
             frmGame2.ShowDialog();
 
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

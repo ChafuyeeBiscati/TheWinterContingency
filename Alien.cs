@@ -35,8 +35,8 @@ namespace TheWinterContingency
         }
         public void MoveAlien (Graphics g)
         {
+            y += 5;
             alienRec.Location = new Point(x, y);
-
 
         }
 

@@ -32,13 +32,14 @@
             this.pnlGame = new System.Windows.Forms.Panel();
             this.tmrBullet = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblLives = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.tmrAlien = new System.Windows.Forms.Timer(this.components);
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.lblLives);
+            this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblScore);
             this.panel1.Controls.Add(this.label1);
@@ -73,31 +74,31 @@
             this.panel1.Size = new System.Drawing.Size(785, 45);
             this.panel1.TabIndex = 0;
             // 
-            // lblLives
+            // lblTime
             // 
-            this.lblLives.AutoSize = true;
-            this.lblLives.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLives.Location = new System.Drawing.Point(384, 5);
-            this.lblLives.Name = "lblLives";
-            this.lblLives.Size = new System.Drawing.Size(30, 29);
-            this.lblLives.TabIndex = 4;
-            this.lblLives.Text = "5";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(423, 7);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(64, 29);
+            this.lblTime.TabIndex = 4;
+            this.lblTime.Text = "120";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nueva Std Cond", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(329, 11);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(348, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 27);
+            this.label2.Size = new System.Drawing.Size(78, 31);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Lives";
+            this.label2.Text = "Time";
             // 
             // lblScore
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(268, 5);
+            this.lblScore.Location = new System.Drawing.Point(312, 7);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(30, 29);
             this.lblScore.TabIndex = 2;
@@ -106,16 +107,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nueva Std Cond", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(198, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(216, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 27);
+            this.label1.Size = new System.Drawing.Size(90, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Score";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(83, 12);
+            this.txtName.Location = new System.Drawing.Point(108, 14);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 0;
@@ -123,16 +124,21 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Nueva Std Cond", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(12, 9);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(12, 5);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(65, 27);
+            this.lblName.Size = new System.Drawing.Size(90, 31);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
             // tmrAlien
             // 
             this.tmrAlien.Tick += new System.EventHandler(this.tmrAlien_Tick);
+            // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 800;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
             // frmGame
             // 
@@ -161,8 +167,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblLives;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer tmrAlien;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }

@@ -133,6 +133,7 @@
             this.Controls.Add(this.pnlName);
             this.Name = "frmMenu";
             this.Text = "The Winter Contingency";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlName.ResumeLayout(false);
             this.pnlName.PerformLayout();
             this.ResumeLayout(false);
