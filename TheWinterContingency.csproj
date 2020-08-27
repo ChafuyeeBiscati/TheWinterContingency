@@ -66,6 +66,7 @@
     <Compile Include="frmHighScores.Designer.cs">
       <DependentUpon>frmHighScores.cs</DependentUpon>
     </Compile>
+    <Compile Include="HighScore.cs" />
     <Compile Include="Mercenary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

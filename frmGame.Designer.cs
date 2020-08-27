@@ -32,6 +32,9 @@
             this.pnlGame = new System.Windows.Forms.Panel();
             this.tmrBullet = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblAmmo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblPlayername = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
@@ -41,9 +44,6 @@
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.tmrMercenary = new System.Windows.Forms.Timer(this.components);
             this.tmrAmmo = new System.Windows.Forms.Timer(this.components);
-            this.lblPlayername = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblAmmo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,11 +80,41 @@
             this.panel1.Size = new System.Drawing.Size(785, 45);
             this.panel1.TabIndex = 0;
             // 
+            // lblAmmo
+            // 
+            this.lblAmmo.AutoSize = true;
+            this.lblAmmo.Font = new System.Drawing.Font("OCR A Extended", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmmo.Location = new System.Drawing.Point(267, 17);
+            this.lblAmmo.Name = "lblAmmo";
+            this.lblAmmo.Size = new System.Drawing.Size(19, 17);
+            this.lblAmmo.TabIndex = 7;
+            this.lblAmmo.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("OCR A Extended", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(190, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 29);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Ammo";
+            // 
+            // lblPlayername
+            // 
+            this.lblPlayername.AutoSize = true;
+            this.lblPlayername.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayername.Location = new System.Drawing.Point(90, 9);
+            this.lblPlayername.Name = "lblPlayername";
+            this.lblPlayername.Size = new System.Drawing.Size(30, 29);
+            this.lblPlayername.TabIndex = 5;
+            this.lblPlayername.Text = "0";
+            // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(718, 7);
+            this.lblTime.Location = new System.Drawing.Point(697, 9);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(64, 29);
             this.lblTime.TabIndex = 4;
@@ -93,10 +123,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(646, 5);
+            this.label2.Font = new System.Drawing.Font("OCR A Extended", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(610, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 31);
+            this.label2.Size = new System.Drawing.Size(81, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Time";
             // 
@@ -104,7 +134,7 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(610, 7);
+            this.lblScore.Location = new System.Drawing.Point(499, 10);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(30, 29);
             this.lblScore.TabIndex = 2;
@@ -113,20 +143,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(514, 5);
+            this.label1.Font = new System.Drawing.Font("OCR A Extended", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(406, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 31);
+            this.label1.Size = new System.Drawing.Size(98, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Score";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(12, 5);
+            this.lblName.Font = new System.Drawing.Font("OCR A Extended", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(12, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(90, 31);
+            this.lblName.Size = new System.Drawing.Size(81, 29);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
@@ -138,36 +168,6 @@
             // 
             this.tmrTime.Interval = 800;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
-            // 
-            // lblPlayername
-            // 
-            this.lblPlayername.AutoSize = true;
-            this.lblPlayername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayername.Location = new System.Drawing.Point(98, 7);
-            this.lblPlayername.Name = "lblPlayername";
-            this.lblPlayername.Size = new System.Drawing.Size(30, 31);
-            this.lblPlayername.TabIndex = 5;
-            this.lblPlayername.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(331, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 31);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ammo";
-            // 
-            // lblAmmo
-            // 
-            this.lblAmmo.AutoSize = true;
-            this.lblAmmo.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmmo.Location = new System.Drawing.Point(422, 7);
-            this.lblAmmo.Name = "lblAmmo";
-            this.lblAmmo.Size = new System.Drawing.Size(30, 29);
-            this.lblAmmo.TabIndex = 7;
-            this.lblAmmo.Text = "0";
             // 
             // frmGame
             // 

@@ -46,15 +46,6 @@ namespace TheWinterContingency
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SaveHighScores();
-            frmMenu frmMenu2 = new frmMenu();
-            Hide();
-            frmMenu2.ShowDialog();
-        }
-
         private void frmHighScores_Load(object sender, EventArgs e)
         {
             int lowest_score = highScores[(highScores.Count - 1)].Score;
@@ -84,6 +75,12 @@ namespace TheWinterContingency
             File.WriteAllText(binPath, builder.ToString());
         }
 
-
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            SaveHighScores();
+            frmMenu frmMenu2 = new frmMenu();
+            Hide();
+            frmMenu2.ShowDialog();
+        }
     }
 }

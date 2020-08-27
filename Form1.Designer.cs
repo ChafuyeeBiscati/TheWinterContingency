@@ -104,6 +104,7 @@
             this.btnHighscore.TabIndex = 4;
             this.btnHighscore.Text = "CHECK HIGHSCORES";
             this.btnHighscore.UseVisualStyleBackColor = true;
+            this.btnHighscore.Click += new System.EventHandler(this.btnHighscore_Click_1);
             // 
             // panel1
             // 

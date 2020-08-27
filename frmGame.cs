@@ -14,7 +14,7 @@ namespace TheWinterContingency
 {
     public partial class frmGame : Form
     {
-        int ammo = 5;
+        //int ammo = 5;
         Graphics g; //declare a graphics object called g
         Mercenary mercenary = new Mercenary();//create object called spaceship 
         //declare a list  missiles from the missile class
@@ -44,7 +44,7 @@ namespace TheWinterContingency
         {
             SoundPlayer player2 = new SoundPlayer(@"h:\301 Computer Science\AS91906 - Programming\WC Design\GameOST1.wav");
             player2.Play();
-            lblAmmo.Text = ammo.ToString();// display score
+            //lblAmmo.Text = ammo.ToString();// display score
             tmrBullet.Enabled = true;
             tmrMercenary.Enabled = true;
             tmrTime.Enabled = true;
@@ -93,18 +93,18 @@ namespace TheWinterContingency
 
         private void pnlGame_MouseDown(object sender, MouseEventArgs e)
         {
-            if (ammo > 0)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    SoundPlayer player = new SoundPlayer(@"h:\301 Computer Science\AS91906 - Programming\WC Design\GunSound_1.wav");
+            //if (ammo > 0)
+            //{
+               if (e.Button == MouseButtons.Left)
+               {
+                   SoundPlayer player = new SoundPlayer(@"h:\301 Computer Science\AS91906 - Programming\WC Design\GunSound_1.wav");
                     player.Play();
                     bullets.Add(new Bullet(mercenary.mercRec, mercenary.rotationAngle));
-                    ammo -= 1;
-                    lblAmmo.Text = ammo.ToString();// display score
+                    //ammo -= 1;
+                    //lblAmmo.Text = ammo.ToString();// display score
                 }
 
-            }
+            //}
         }
 
         private void tmrBullet_Tick(object sender, EventArgs e)
@@ -189,12 +189,12 @@ namespace TheWinterContingency
                 Cursor.Show();
 
             }
-            if (ammo == 0)
-            {
-                lblAmmo.Text = "Reloading";
-                tmrAmmo.Enabled = true;
+            //if (ammo == 0)
+            //{
+                //lblAmmo.Text = "Reloading";
+                //tmrAmmo.Enabled = true;
 
-            }
+            //}
         }
 
         private void tmrMercenary_Tick(object sender, EventArgs e)
@@ -220,8 +220,8 @@ namespace TheWinterContingency
 
         private void tmrAmmo_Tick(object sender, EventArgs e)
         {
-            ammo = 5;
-            tmrAmmo.Enabled = false;
+            //ammo = 5;
+            //tmrAmmo.Enabled = false;
         }
 
         private void frmGame_KeyDown(object sender, KeyEventArgs e)

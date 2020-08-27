@@ -40,12 +40,11 @@ namespace TheWinterContingency
 
         }
 
-        private void btnHighscore_Click(object sender, EventArgs e)
+        private void btnHighscore_Click_1(object sender, EventArgs e)
         {
             frmHighScores frmHighScore2 = new frmHighScores(txtName.Text, txtScore.Text);
 
             frmHighScore2.ShowDialog();
         }
-
     }
 }
