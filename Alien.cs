@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace TheWinterContingency
 {
@@ -12,6 +13,7 @@ namespace TheWinterContingency
         // declare fields to use in the class
 
         public int x, y, width, height;//variables for the rectangle
+        public Matrix matrixalien;
         public Image alienImage;//variable for the planet's image
         public Rectangle alienRec;//variable for a rectangle to place our image in
 
@@ -30,10 +32,11 @@ namespace TheWinterContingency
         public void draw(Graphics g)
         {
             alienRec = new Rectangle(x, y, width, height);
-
+            matrixalien = new Matrix();
+            g.Transform = matrixalien;
             g.DrawImage(alienImage, alienRec);
         }
-        public void MoveAlien (Graphics g)
+        public void MoveAlien(Graphics g)
         {
             y += 5;
             alienRec.Location = new Point(x, y);

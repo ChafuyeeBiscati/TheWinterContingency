@@ -24,15 +24,28 @@ namespace TheWinterContingency
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            frmGame frmGame2 = new frmGame();
-            
+            frmGame frmGame2 = new frmGame(txtName.Text);
+
             frmGame2.ShowDialog();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void btnHighscore_Click(object sender, EventArgs e)
+        {
+            frmHighScores frmHighScore2 = new frmHighScores(txtName.Text, txtScore.Text);
+
+            frmHighScore2.ShowDialog();
+        }
+
     }
 }

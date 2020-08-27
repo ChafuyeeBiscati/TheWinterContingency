@@ -37,6 +37,8 @@
             this.btnHighscore = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtScore = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlName.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Font = new System.Drawing.Font("Onyx", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(220, 96);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(202, 67);
@@ -64,9 +66,9 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(48, 50);
+            this.txtName.Location = new System.Drawing.Point(12, 50);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.Size = new System.Drawing.Size(82, 20);
             this.txtName.TabIndex = 2;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -74,6 +76,8 @@
             // 
             this.pnlName.BackColor = System.Drawing.Color.Gainsboro;
             this.pnlName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlName.Controls.Add(this.label3);
+            this.pnlName.Controls.Add(this.txtScore);
             this.pnlName.Controls.Add(this.label2);
             this.pnlName.Controls.Add(this.txtName);
             this.pnlName.Location = new System.Drawing.Point(220, 169);
@@ -84,16 +88,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Mistral", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(76, 18);
+            this.label2.Font = new System.Drawing.Font("Onyx", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 19);
+            this.label2.Size = new System.Drawing.Size(50, 30);
             this.label2.TabIndex = 3;
             this.label2.Text = "NAME";
             // 
             // btnHighscore
             // 
-            this.btnHighscore.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHighscore.Font = new System.Drawing.Font("Onyx", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHighscore.Location = new System.Drawing.Point(220, 265);
             this.btnHighscore.Name = "btnHighscore";
             this.btnHighscore.Size = new System.Drawing.Size(202, 64);
@@ -118,6 +122,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(72, 233);
             this.panel2.TabIndex = 5;
+            // 
+            // txtScore
+            // 
+            this.txtScore.Location = new System.Drawing.Point(100, 50);
+            this.txtScore.Name = "txtScore";
+            this.txtScore.Size = new System.Drawing.Size(86, 20);
+            this.txtScore.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Onyx", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(116, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 30);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "SCORE";
             // 
             // frmMenu
             // 
@@ -151,6 +172,8 @@
         private System.Windows.Forms.Button btnHighscore;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtScore;
     }
 }
 

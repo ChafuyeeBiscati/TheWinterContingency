@@ -36,10 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.tmrAlien = new System.Windows.Forms.Timer(this.components);
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
+            this.tmrMercenary = new System.Windows.Forms.Timer(this.components);
+            this.tmrAmmo = new System.Windows.Forms.Timer(this.components);
+            this.lblPlayername = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblAmmo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,11 +67,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lblAmmo);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblPlayername);
             this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblScore);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -78,7 +84,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(423, 7);
+            this.lblTime.Location = new System.Drawing.Point(718, 7);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(64, 29);
             this.lblTime.TabIndex = 4;
@@ -88,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(348, 5);
+            this.label2.Location = new System.Drawing.Point(646, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 31);
             this.label2.TabIndex = 3;
@@ -98,7 +104,7 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(312, 7);
+            this.lblScore.Location = new System.Drawing.Point(610, 7);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(30, 29);
             this.lblScore.TabIndex = 2;
@@ -108,18 +114,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(216, 5);
+            this.label1.Location = new System.Drawing.Point(514, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Score";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(108, 14);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 0;
             // 
             // lblName
             // 
@@ -140,11 +139,41 @@
             this.tmrTime.Interval = 800;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
+            // lblPlayername
+            // 
+            this.lblPlayername.AutoSize = true;
+            this.lblPlayername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayername.Location = new System.Drawing.Point(98, 7);
+            this.lblPlayername.Name = "lblPlayername";
+            this.lblPlayername.Size = new System.Drawing.Size(30, 31);
+            this.lblPlayername.TabIndex = 5;
+            this.lblPlayername.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(331, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 31);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Ammo";
+            // 
+            // lblAmmo
+            // 
+            this.lblAmmo.AutoSize = true;
+            this.lblAmmo.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmmo.Location = new System.Drawing.Point(422, 7);
+            this.lblAmmo.Name = "lblAmmo";
+            this.lblAmmo.Size = new System.Drawing.Size(30, 29);
+            this.lblAmmo.TabIndex = 7;
+            this.lblAmmo.Text = "0";
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Turquoise;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(784, 536);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGame);
@@ -165,11 +194,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer tmrAlien;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.Timer tmrMercenary;
+        private System.Windows.Forms.Timer tmrAmmo;
+        private System.Windows.Forms.Label lblAmmo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPlayername;
     }
 }
